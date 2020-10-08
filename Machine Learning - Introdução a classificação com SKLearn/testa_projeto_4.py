@@ -5,6 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
+from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 import pandas as pd
 
@@ -64,4 +65,13 @@ previsoes = modelo.predict(teste_x)
 
 acuracia = accuracy_score(teste_y, previsoes) * 100
 print("A acurácia com SVC e StandardScaler foi %.2f%%" % acuracia)
+
+# descobre acurácia com árvore de decisão
+# pode definir a profundidade da árvore com max_depth nos parenteses
+modelo = DecisionTreeClassifier()
+modelo.fit(raw_treino_x, treino_y)
+previsoes = modelo.predict(raw_teste_x)
+
+acuracia = accuracy_score(teste_y, previsoes) * 100
+print('A acurácia usando árvore de decisão foi %.2f%%' % acuracia)
 
