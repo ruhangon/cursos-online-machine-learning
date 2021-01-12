@@ -6,3 +6,5 @@ Usado para estudos de aprendizado de máquina
 
 - Machine Learning: Introdução a classificação com SKLearn
 
+- Machine Learning: Introdução a algoritmos não supervisionados
+
